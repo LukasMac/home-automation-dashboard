@@ -1,6 +1,10 @@
 {
   "name": "home-dashboard",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LukasMac/home-automation-dashboard.git"
+  },
   "description": "Home automation dashboard that will be shown in tablet.",
   "main": "index.js",
   "scripts": {
