@@ -1,0 +1,15 @@
+{
+  "name": "home-dashboard",
+  "version": "1.0.0",
+  "description": "Home automation dashboard that will be shown in tablet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lukas Maciulis <lukas.maciulis@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
+
