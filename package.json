@@ -32,6 +32,7 @@
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "connected-react-router": "4.4.1",
     "express": "^4.16.4",
     "object-assign": "4.1.1",

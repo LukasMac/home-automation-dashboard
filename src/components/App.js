@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
-import LightsView from './LightsView/LightsView';
+import TrafficInfoContainer from "../containers/TrafficInfoContainer";
 import NotFoundPage from "./NotFoundPage";
 import React from "react";
 import { hot } from "react-hot-loader";
@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={LightsView} />
+          <Route exact path="/" component={TrafficInfoContainer} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
