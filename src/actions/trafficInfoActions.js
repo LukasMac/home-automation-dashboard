@@ -1,22 +1,43 @@
-import axios from 'axios ';
+import { generateRequestActionTypesFor, generateRequestActions } from '../lib/requestActions';
+import trafficInfoWebAPI from '../lib/web-apis/trafficInfoWebAPI';
+import blindOpenerWebAPI from '../lib/web-apis/trafficInfoWebAPI';
 
 export const types = {
-  CLICK: 'CLICK',
+  ...generateRequestActionTypesFor('OPEN_BLINDS'),
+  ...generateRequestActionTypesFor('CLOSE_BLINDS_UPWORDS'),
+  ...generateRequestActionTypesFor('FETCH_TRAFFIC_INFO'),
 };
 
-export const click = () => ({
-  type: types.CLICK,
-});
+export const openBlinds = () => {
+  const {
+    requestAction,
+    successAction,
+    failureAction
+  } = generateRequestActions(types.OPEN_BLINDS);
+
+  return (dispatch, getState) => {
+    dispatch(requestAction());
+
+    blindOpenerWebAPI.open().then(
+      response => dispatch(successAction(response)),
+      error => dispatch(failureAction(error))
+    );
+  };
+};
 
 export const fetchTrafficInfo = () => {
-  // return (dispatch, getState) => {
-  //   dispatch({type : "REQUEST_STARTED"});
-  //
-  //       myAjaxLib.post("/someEndpoint", {data : someValue})
-  //           .then(
-  //               response => dispatch({type : "REQUEST_SUCCEEDED", payload : response}),
-  //               error => dispatch({type : "REQUEST_FAILED", error : error})
-  //           );    
-  //   };;
-  return { type: 'AAA' };
+  const {
+    requestAction,
+    successAction,
+    failureAction
+  } = generateRequestActions(types.FETCH_TRAFFIC_INFO);
+
+  return (dispatch, getState) => {
+    dispatch(requestAction());
+
+    trafficInfoWebAPI.mainInfo().then(
+      response => dispatch(successAction(response)),
+      error => dispatch(failureAction(error))
+    );
+  };
 };
