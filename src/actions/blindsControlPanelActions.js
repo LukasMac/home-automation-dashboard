@@ -1,22 +1,22 @@
 import { generateRequestActionTypesFor, generateRequestActions } from '../lib/requestActions';
-import trafficInfoWebAPI from '../lib/web-apis/trafficInfoWebAPI';
+import blindOpenerWebAPI from '../lib/web-apis/blindOpenerWebAPI';
 
 export const types = {
-  ...generateRequestActionTypesFor('FETCH_TRAFFIC_INFO'),
+  ...generateRequestActionTypesFor('OPEN_BLINDS'),
+  ...generateRequestActionTypesFor('CLOSE_BLINDS_UPWORDS'),
 };
 
-
-export const fetchTrafficInfo = () => {
+export const openBlinds = () => {
   const {
     requestAction,
     successAction,
     failureAction
-  } = generateRequestActions(types.FETCH_TRAFFIC_INFO);
+  } = generateRequestActions(types.OPEN_BLINDS);
 
   return (dispatch, getState) => {
     dispatch(requestAction());
 
-    trafficInfoWebAPI.mainInfo().then(
+    blindOpenerWebAPI.open().then(
       response => dispatch(successAction(response)),
       error => dispatch(failureAction(error))
     );
