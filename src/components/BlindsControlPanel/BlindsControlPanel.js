@@ -8,13 +8,14 @@ export default class BlindsControlPanel extends React.Component {
   };
 
   render() {
-    const { onOpenBlinds } = this.props;
+    const { onOpenBlinds, onCloseBlindsUpwards, onCloseBlindsDownwards } = this.props;
 
     return (
       <div>
         <h1>Window Blinds Control Panel</h1>
         <button onClick={onOpenBlinds}>Open Blinds</button>
-        <button onClick={onOpenBlinds}>Close Blinds Up</button>
+        <button onClick={onCloseBlindsUpwards}>Close Blinds Up</button>
+        <button onClick={onCloseBlindsDownwards}>Close Blinds Down</button>
       </div>
       );
   }
