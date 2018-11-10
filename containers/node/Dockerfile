@@ -2,4 +2,4 @@ FROM node:10.12.0-alpine
 WORKDIR /app
 COPY . /app
 RUN npm install
-RUN babel-node tools/build.js
+RUN ./node_modules/.bin/babel-node tools/build.js

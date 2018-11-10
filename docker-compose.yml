@@ -13,13 +13,13 @@ services:
       dockerfile: ./containers/node/Dockerfile
     depends_on:
      - nginx
-    user: "node"
     working_dir: "/app"
     environment:
      - NODE_ENV=production
     volumes:
-     - ./:/app
+     - ./:/app:rw,cached
      - /app/node_modules
+     - /app/dist
     expose:
      - "8081"
     command: "node server.js"
