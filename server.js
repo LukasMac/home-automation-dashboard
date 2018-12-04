@@ -3,6 +3,7 @@ const request = require('request');
 require('dotenv').load();
 const app = express();
 const port = 8081;
+const path = require("path");
 
 app.get('/healthCheck', function(req,res) {
   res.status(200).send('I\'m healthy papa!')
