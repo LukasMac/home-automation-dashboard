@@ -8,17 +8,17 @@ export const types = {
 
 export const fetchTrafficInfo = () => {
   const {
-    requestAction,
-    successAction,
-    failureAction
+    requestStarted,
+    requestSucceeded,
+    requestFailed,
   } = generateRequestActions(types.FETCH_TRAFFIC_INFO);
 
   return (dispatch, getState) => {
-    dispatch(requestAction());
+    dispatch(requestStarted());
 
-    trafficInfoWebAPI.mainInfo().then(
-      response => dispatch(successAction(response)),
-      error => dispatch(failureAction(error))
+    trafficInfoWebAPI.trafficFromLuma().then(
+      response => dispatch(requestSucceeded(response)),
+      error => dispatch(requestFailed(error))
     );
   };
 };

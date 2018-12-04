@@ -10,14 +10,14 @@ export const generateRequestActionTypesFor = (prefix) => ({
 })
 
 export const generateRequestActions = (prefix) => ({
-  requestAction: () => ({
+  requestStarted: () => ({
     type: requestActionName(prefix),
   }),
-  successAction: (data) => ({
+  requestSucceeded: (data) => ({
     type: successActionName(prefix),
     data
   }),
-  failureAction: (error) => ({
+  requestFailed: (error) => ({
     type: failureActionName(prefix),
     error
   }),

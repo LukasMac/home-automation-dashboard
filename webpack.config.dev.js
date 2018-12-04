@@ -3,6 +3,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'; 
 
+const GLOBALS = {
+  'process.env.NODE_ENV': JSON.stringify('development'),
+  __DEV__: true
+};
+
 export default {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
@@ -23,6 +28,7 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    new webpack.DefinePlugin(GLOBALS),
     new HardSourceWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

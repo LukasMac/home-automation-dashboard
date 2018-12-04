@@ -1,18 +1,15 @@
 import { types } from '../actions/trafficInfoActions';
 
-const initialState = {
-  cnt: 0,
-}
+const initialState = { }
 
-const onClick = state => ({
-  ...state,
-  cnt: state.cnt + 1,
+const onFetchTrafficInfoSuccess = ({ data }) => ({
+  ...((data && data.ResponseData) || {})
 });
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.CLICK:
-      return onClick(state);
+    case types.FETCH_TRAFFIC_INFO_SUCCESS:
+      return onFetchTrafficInfoSuccess(action.data);
     default:
       return state;
   }

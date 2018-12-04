@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const HOST = __DEV__ ? 'http://localhost:8081' : '';
+
 export default {
-  mainInfo: () => axios.get("https://jsonplaceholder.typicode.com/todos/1"),
+  trafficFromLuma: () => axios.get(HOST + "/realtimedepartures"),
 }

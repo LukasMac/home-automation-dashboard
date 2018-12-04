@@ -9,51 +9,51 @@ export const types = {
 
 export const openBlinds = () => {
   const {
-    requestAction,
-    successAction,
-    failureAction
+    requestStarted,
+    requestSucceeded,
+    requestFailed,
   } = generateRequestActions(types.OPEN_BLINDS);
 
   return (dispatch, getState) => {
-    dispatch(requestAction());
+    dispatch(requestStarted());
 
     blindOpenerWebAPI.open().then(
-      response => dispatch(successAction(response)),
-      error => dispatch(failureAction(error))
+      response => dispatch(requestSucceeded(response)),
+      error => dispatch(requestFailed(error))
     );
   };
 };
 
 export const closeBlindsUpwards = () => {
   const {
-    requestAction,
-    successAction,
-    failureAction
+    requestStarted,
+    requestSucceeded,
+    requestFailed,
   } = generateRequestActions(types.CLOSE_BLINDS_UPWARDS);
 
   return (dispatch, getState) => {
-    dispatch(requestAction());
+    dispatch(requestStarted());
 
     blindOpenerWebAPI.closeUpwards().then(
-      response => dispatch(successAction(response)),
-      error => dispatch(failureAction(error))
+      response => dispatch(requestSucceeded(response)),
+      error => dispatch(requestFailed(error))
     );
   };
 };
 
 export const closeBlindsDownwards = () => {
   const {
-    requestAction,
-    successAction,
-    failureAction
+    requestStarted,
+    requestSucceeded,
+    requestFailed,
   } = generateRequestActions(types.CLOSE_BLINDS_DOWNWARDS);
 
   return (dispatch, getState) => {
-    dispatch(requestAction());
+    dispatch(requestStarted());
 
     blindOpenerWebAPI.closeDownwards().then(
-      response => dispatch(successAction(response)),
-      error => dispatch(failureAction(error))
+      response => dispatch(requestSucceeded(response)),
+      error => dispatch(requestFailed(error))
     );
   };
 };

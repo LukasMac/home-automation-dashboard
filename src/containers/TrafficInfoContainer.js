@@ -20,8 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      onClick: click,
-      onSendRequest: fetchTrafficInfo,
+      onRefresh: fetchTrafficInfo,
     },
     dispatch
   );
