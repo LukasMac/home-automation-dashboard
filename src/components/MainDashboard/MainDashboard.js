@@ -10,9 +10,9 @@ export default class MainDashboard extends React.Component {
         <BlindsControlPanelContainer />
         <TrafficInfoContainer />
         <LightsOnAndOffContainer />
-        <a href="/load-env-config">Load ENV config</a>
-        <a href="/blinds-config">Blinds config</a>
-        <a href="/traffic-from-luma">Traffic from Luma</a>
+        <a href="/home-automation-dashboard/load-env-config">Load ENV config</a>
+        <a href="/home-automation-dashboard/blinds-config">Blinds config</a>
+        <a href="/home-automation-dashboard/traffic-from-luma">Traffic from Luma</a>
       </div>
       );
   }

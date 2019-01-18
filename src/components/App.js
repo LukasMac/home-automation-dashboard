@@ -17,10 +17,10 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={MainDashboard} />
-          <Route exact path="/load-env-config" component={LoadEnvConfigContainer} />
-          <Route exact path="/blinds-config" component={BlindsConfigPanelContainer} />
-          <Route exact path="/traffic-from-luma" component={TrafficInfoContainer} />
+          <Route exact path="/home-automation-dashboard/" component={MainDashboard} />
+          <Route exact path="/home-automation-dashboard/load-env-config" component={LoadEnvConfigContainer} />
+          <Route exact path="/home-automation-dashboard/blinds-config" component={BlindsConfigPanelContainer} />
+          <Route exact path="/home-automation-dashboard/traffic-from-luma" component={TrafficInfoContainer} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
