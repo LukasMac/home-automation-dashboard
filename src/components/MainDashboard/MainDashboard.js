@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import BlindsControlPanelContainer from "../../containers/BlindsControlPanelContainer";
 import TrafficInfoContainer from "../../containers/TrafficInfoContainer";
 import LightsOnAndOffContainer from "../../containers/LightsOnAndOffContainer";
@@ -10,9 +11,9 @@ export default class MainDashboard extends React.Component {
         <BlindsControlPanelContainer />
         <TrafficInfoContainer />
         <LightsOnAndOffContainer />
-        <a href="/home-automation-dashboard/load-env-config">Load ENV config</a>
-        <a href="/home-automation-dashboard/blinds-config">Blinds config</a>
-        <a href="/home-automation-dashboard/traffic-from-luma">Traffic from Luma</a>
+        <Link to="/load-env-config">Load ENV config</Link>
+        <Link to="/blinds-config">Blinds config</Link>
+        <Link to="/traffic-from-luma">Traffic from Luma</Link>
       </div>
       );
   }
