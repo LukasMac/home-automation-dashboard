@@ -1,3 +1,4 @@
+import './TrafficInfo.scss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Moment from 'moment';
@@ -9,8 +10,6 @@ export default class TrafficInfo extends React.Component {
     this.state = { currentTime: '' };
     this.props.onRefresh();
     setInterval(this.ticker.bind(this), 1000);
-    setInterval(this.props.onRefresh, 1000 * 60 * 5);
-
   }
 
   ticker() {
@@ -57,15 +56,15 @@ export default class TrafficInfo extends React.Component {
 
 
     return (
-      <div>
+      <div className="wrapper">
+        <h2>Traffic from Luma</h2>
         <h3>Current time: {this.state.currentTime}</h3>
-        <br />
         <h3>Buses:</h3>
         {this.buses()}
         <br />
         <h3>Trams:</h3>
         {this.trams()}
-        <button onClick={onRefresh}>Refresh</button>
+        <button onClick={onRefresh}>Refresh (last update: {Moment(this.props.LatestUpdate).fromNow()})</button>
       </div>
       );
   }

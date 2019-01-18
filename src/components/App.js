@@ -1,7 +1,9 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
-import BlindsControlPanelContainer from "../containers/BlindsControlPanelContainer";
+import MainDashboard from "./MainDashboard/MainDashboard";
+import BlindsConfigPanelContainer from "../containers/BlindsConfigPanelContainer";
 import TrafficInfoContainer from "../containers/TrafficInfoContainer";
+import LoadEnvConfigContainer from "../containers/LoadEnvConfigContainer";
 import NotFoundPage from "./NotFoundPage";
 import React from "react";
 import { hot } from "react-hot-loader";
@@ -15,7 +17,9 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={BlindsControlPanelContainer} />
+          <Route exact path="/" component={MainDashboard} />
+          <Route exact path="/load-env-config" component={LoadEnvConfigContainer} />
+          <Route exact path="/blinds-config" component={BlindsConfigPanelContainer} />
           <Route exact path="/traffic-from-luma" component={TrafficInfoContainer} />
           <Route component={NotFoundPage} />
         </Switch>

@@ -7,15 +7,50 @@ export default class BlindsControlPanel extends React.Component {
     onOpenBlinds: PropTypes.func.isRequired,
   };
 
+  state = { selectedWindow: 'all' };
+
+  handleWindowClick(e, index) {
+    this.setState({ selectedWindow: index });
+  }
+
+  getWindowsData() {
+    const index = this.state.selectedWindow;
+    if (index === 'all') {
+      return this.props.windows;
+    }
+
+    return { [index]: this.props.windows[index] };
+  }
+
+  renderWindowControl(index) {
+    const isSelected = index === this.state.selectedWindow;
+    const isSelectedClassName = isSelected ? 'selected' : '';
+
+    return (
+      <div className="single-window-select" key={index}>
+        <button className={isSelectedClassName} onClick={(e) => this.handleWindowClick(e, index)}>Window #{index}</button>
+      </div>
+      );
+  }
+
   render() {
-    const { onOpenBlinds, onCloseBlindsUpwards, onCloseBlindsDownwards } = this.props;
+    const { onIPchange, onOpenBlinds, onCloseBlindsUpwards, onCloseBlindsDownwards, onMoveBlindsUp, onMoveBlindsDown, windows = {} } = this.props;
 
     return (
       <div>
         <h1>Window Blinds Control Panel</h1>
-        <button onClick={onOpenBlinds}>Open Blinds</button>
-        <button onClick={onCloseBlindsUpwards}>Close Blinds Up</button>
-        <button onClick={onCloseBlindsDownwards}>Close Blinds Down</button>
+        <div>
+          <h3>1. Select window</h3>
+          {[...Object.keys(windows), 'all'].map(this.renderWindowControl.bind(this))}
+        </div>
+        <div>
+          <h3>2. Choose an action</h3>
+          <button onClick={() => onOpenBlinds(this.getWindowsData())}>Open Blinds</button>
+          <button onClick={() => onCloseBlindsUpwards(this.getWindowsData())}>Close Blinds Up</button>
+          <button onClick={() => onCloseBlindsDownwards(this.getWindowsData())}>Close Blinds Down</button>
+          <button onClick={() => onMoveBlindsUp(this.getWindowsData())}>Move Up</button>
+          <button onClick={() => onMoveBlindsDown(this.getWindowsData())}>Move Down</button>
+        </div>
       </div>
       );
   }

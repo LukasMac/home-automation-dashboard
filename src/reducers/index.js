@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import trafficInfoReducer from './trafficInfoReducer';
-import blindsControlPanel from './blindsControlPanelReducer';
+import blindsControlPanelReducer from './blindsControlPanelReducer';
+import loadEnvConfigReducer from './loadEnvConfigReducer';
 
 const rootReducer = combineReducers({
-  blindsControlPanel,
+  blindsControlPanelReducer ,
   trafficInfoReducer,
+  loadEnvConfigReducer,
 });
 
 export default rootReducer;

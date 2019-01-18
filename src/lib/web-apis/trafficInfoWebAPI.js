@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const HOST = __DEV__ ? 'http://localhost:8081' : '';
+export const URL = localStorage.getItem("trafficInfoURL");
 
 export default {
-  trafficFromLuma: () => axios.get(HOST + "/realtimedepartures"),
+  trafficFromLuma: () => axios.get(URL),
 }

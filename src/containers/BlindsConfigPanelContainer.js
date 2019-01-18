@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { openBlinds, closeBlindsUpwards, closeBlindsDownwards, moveBlindsUp, moveBlindsDown } from '../actions/blindsControlPanelActions';
-import BlindsControlPanel from '../components/BlindsControlPanel/BlindsControlPanel';
+import { ipChange, speedUpwardsChange, speedDownwardsChange, delayToOpenChange, delayToCloseChange, openBlinds, closeBlindsUpwards, closeBlindsDownwards, moveBlindsUp, moveBlindsDown } from '../actions/blindsControlPanelActions';
+import BlindsConfigPanel from '../components/BlindsControlPanel/BlindsConfigPanel';
 
-export class BlindsControlPanelContainer extends Component {
+export class BlindsConfigPanelContainer extends Component {
   render() {
     return (
-      <BlindsControlPanel {...this.props}/>
+      <BlindsConfigPanel {...this.props}/>
     );
   }
 }
@@ -20,6 +20,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) =>
   bindActionCreators(
     {
+      onipChange: ipChange,
+      onspeedupwardsChange: speedUpwardsChange,
+      onspeeddownwardsChange: speedDownwardsChange,
+      ondelaytoopenChange: delayToOpenChange,
+      ondelaytocloseChange: delayToCloseChange,
       onOpenBlinds: openBlinds,
       onCloseBlindsUpwards: closeBlindsUpwards,
       onCloseBlindsDownwards: closeBlindsDownwards,
@@ -32,4 +37,4 @@ const mapDispatchToProps = (dispatch, ownProps) =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(BlindsControlPanelContainer);
+)(BlindsConfigPanelContainer);

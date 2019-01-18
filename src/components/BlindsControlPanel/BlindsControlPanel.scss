@@ -3,3 +3,23 @@ button {
   padding: 20px;
   margin: 20px;
 }
+
+.single-window-controls {
+  display: inline-block;
+  width: 200px;
+
+  button {
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px;
+  }
+}
+.single-window-select {
+  display: inline-block;
+  width: 150px;
+
+  button.selected {
+    background-color: green;
+  }
+}
