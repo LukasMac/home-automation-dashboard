@@ -1,0 +1,6 @@
+{
+  "blindsControlState": "{\"0\":{\"ip\":\"192.168.0.100\",\"speedUpwards\":\"1403\",\"speedDownwards\":\"1599\",\"delayToOpen\":\"1000\",\"delayToClose\":\"2000\"},\"1\":{\"speedDownwards\":\"1599\",\"ip\":\"192.168.0.101\",\"speedUpwards\":\"1400\",\"delayToOpen\":\"1000\",\"delayToClose\":\"3000\"},\"2\":{\"speedUpwards\":\"1427\",\"ip\":\"192.168.0.102\",\"speedDownwards\":\"1599\",\"delayToOpen\":\"1000\",\"delayToClose\":\"3200\"},\"3\":{\"speedDownwards\":\"1408\",\"speedUpwards\":\"1579\",\"ip\":\"192.168.0.103\",\"delayToOpen\":\"680\",\"delayToClose\":\"1000\"},\"4\":{\"ip\":\"192.168.0.104\",\"speedDownwards\":\"1700\",\"speedUpwards\":\"1200\",\"delayToOpen\":\"700\",\"delayToClose\":\"1000\"}}",
+  "philipsHueApiUser": "YWLIsCDJ2V6xeumwOyAzWFULnujTaVdDP3B3JTMN",
+  "philipsHueBridgeIP": "192.168.0.3",
+  "trafficInfoURL": "https://europe-west1-divine-catalyst-228921.cloudfunctions.net/getLumaDepartures"
+}
