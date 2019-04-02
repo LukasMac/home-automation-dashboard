@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case types.LOAD_ENV_CONFIG_SUCCESS:
       const data = action.data.data;
       Object.keys(data).forEach(key => {
-        localStorage.setItem(key, data[key]);
+        localStorage.setItem(key, JSON.stringify(data[key]));
       });
 
       return "Success";
