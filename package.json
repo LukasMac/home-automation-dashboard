@@ -139,6 +139,7 @@
               "targets": {
                 "ie": 9
               },
+              "useBuiltIns": "entry",
               "forceAllTransforms": true
             }
           ],
