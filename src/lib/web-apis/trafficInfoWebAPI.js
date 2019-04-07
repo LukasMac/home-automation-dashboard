@@ -1,7 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const URL = localStorage.getItem("trafficInfoURL");
+export const URL = JSON.parse(localStorage.getItem("trafficInfoURL") || "{}")[
+  "value"
+];
 
 export default {
-  trafficFromLuma: () => axios.get(URL),
-}
+  trafficFromLuma: () => axios.get(URL)
+};

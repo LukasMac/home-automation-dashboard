@@ -1,56 +1,62 @@
 {
   "blindsControlState": {
     "0": {
-      "ip": "192.168.0.100",
+      "ip": "192.168.86.101",
       "speedUpwards": "1000",
       "speedDownwards": "1700",
       "delayToOpen": "500",
       "delayToClose": "1000"
     },
     "1": {
+      "ip": "192.168.86.102",
       "speedDownwards": "1700",
-      "ip": "192.168.0.101",
       "speedUpwards": "1000",
       "delayToOpen": "500",
       "delayToClose": "1000"
     },
     "2": {
+      "ip": "192.168.86.103",
       "speedUpwards": "1700",
-      "ip": "192.168.0.102",
       "speedDownwards": "1000",
       "delayToOpen": "500",
       "delayToClose": "1000"
     },
     "3": {
+      "ip": "192.168.86.104",
       "speedDownwards": "1000",
       "speedUpwards": "1700",
-      "ip": "192.168.0.103",
       "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "4": {
-      "ip": "192.168.0.104",
+      "ip": "192.168.86.105",
       "speedDownwards": "1700",
       "speedUpwards": "1000",
       "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "5": {
-      "ip": "192.168.0.106",
+      "ip": "192.168.86.107",
       "speedDownwards": "1000",
       "speedUpwards": "1900",
       "delayToOpen": "1000",
       "delayToClose": "2000"
     },
     "6": {
-      "ip": "192.168.0.107",
+      "ip": "192.168.86.108",
       "speedDownwards": "1900",
       "speedUpwards": "1000",
       "delayToOpen": "650",
       "delayToClose": "1000"
     }
   },
-  "philipsHueApiUser": "YWLIsCDJ2V6xeumwOyAzWFULnujTaVdDP3B3JTMN",
-  "philipsHueBridgeIP": "192.168.0.3",
-  "trafficInfoURL": "https://europe-west1-divine-catalyst-228921.cloudfunctions.net/getLumaDepartures"
+  "philipsHueApiUser": {
+    "value": "YWLIsCDJ2V6xeumwOyAzWFULnujTaVdDP3B3JTMN"
+  },
+  "philipsHueBridgeIP": {
+    "value": "192.168.86.3"
+  },
+  "trafficInfoURL": {
+    "value": "https://europe-west1-divine-catalyst-228921.cloudfunctions.net/getLumaDepartures"
+  }
 }
