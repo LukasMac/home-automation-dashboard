@@ -4,49 +4,56 @@
       "ip": "192.168.86.101",
       "speedUpwards": "1000",
       "speedDownwards": "1700",
-      "delayToOpen": "500",
+      "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "1": {
       "ip": "192.168.86.102",
-      "speedDownwards": "1700",
       "speedUpwards": "1000",
-      "delayToOpen": "500",
+      "speedDownwards": "1700",
+      "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "2": {
       "ip": "192.168.86.103",
-      "speedUpwards": "1700",
-      "speedDownwards": "1000",
+      "speedUpwards": "1000",
+      "speedDownwards": "1700",
       "delayToOpen": "500",
       "delayToClose": "1000"
     },
     "3": {
       "ip": "192.168.86.104",
-      "speedDownwards": "1000",
       "speedUpwards": "1700",
+      "speedDownwards": "1000",
       "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "4": {
       "ip": "192.168.86.105",
-      "speedDownwards": "1700",
       "speedUpwards": "1000",
+      "speedDownwards": "1700",
       "delayToOpen": "550",
       "delayToClose": "1000"
     },
     "5": {
-      "ip": "192.168.86.107",
-      "speedDownwards": "1000",
-      "speedUpwards": "1900",
-      "delayToOpen": "1000",
-      "delayToClose": "2000"
+      "ip": "192.168.86.106",
+      "speedUpwards": "1000",
+      "speedDownwards": "1700",
+      "delayToOpen": "550",
+      "delayToClose": "1000"
     },
     "6": {
+      "ip": "192.168.86.107",
+      "speedUpwards": "1700",
+      "speedDownwards": "1000",
+      "delayToOpen": "950",
+      "delayToClose": "2000"
+    },
+    "7": {
       "ip": "192.168.86.108",
-      "speedDownwards": "1900",
       "speedUpwards": "1000",
-      "delayToOpen": "650",
+      "speedDownwards": "1700",
+      "delayToOpen": "950",
       "delayToClose": "1000"
     }
   },
