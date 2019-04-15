@@ -39,14 +39,14 @@
       "ip": "192.168.86.106",
       "speedUpwards": "1000",
       "speedDownwards": "1700",
-      "delayToOpen": "550",
+      "delayToOpen": "500",
       "delayToClose": "1000"
     },
     "6": {
       "ip": "192.168.86.107",
       "speedUpwards": "1700",
       "speedDownwards": "1000",
-      "delayToOpen": "950",
+      "delayToOpen": "900",
       "delayToClose": "2000"
     },
     "7": {
