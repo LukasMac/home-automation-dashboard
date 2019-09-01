@@ -1,7 +1,7 @@
 import { types } from '../actions/blindsControlPanelActions';
 
 const BLINDS_CONTROL_STATE = 'blindsControlState';
-const initialState = localStorage.getItem(BLINDS_CONTROL_STATE) ? JSON.parse(localStorage.getItem(BLINDS_CONTROL_STATE)) : { 0: {}, 1: {}, 2: {}, 3: {}, 4: {} };
+const initialState = { 0: {}, 1: {}, 2: {}, 3: {}, 4: {}, 5: {}, 6: {}, 7: {} };
 
 let newState;
 export default (state = initialState, action) => {
