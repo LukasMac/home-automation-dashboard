@@ -12,9 +12,8 @@ export default class MainDashboard extends React.Component {
         <TrafficInfoContainer />
         <LightsOnAndOffContainer />
         <Link to="/load-env-config">Load ENV config</Link>
-        <Link to="/blinds-config">Blinds config</Link>
         <Link to="/traffic-from-luma">Traffic from Luma</Link>
       </div>
-      );
+    );
   }
 }

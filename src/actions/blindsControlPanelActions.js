@@ -57,7 +57,7 @@ export const delayToCloseChange = (value, index) => {
   };
 };
 
-export const openBlinds = blindControlData => {
+export const operateBlinds = (action, index) => {
   const { requestStarted, requestSucceeded } = generateRequestActions(
     types.OPEN_BLINDS
   );
@@ -65,9 +65,7 @@ export const openBlinds = blindControlData => {
   return async dispatch => {
     dispatch(requestStarted());
 
-    for (let key of Object.keys(blindControlData)) {
-      await blindOpenerWebAPI.open(blindControlData[key]);
-    }
+    await blindOpenerWebAPI.run(action, index);
     dispatch(requestSucceeded({}));
   };
 };

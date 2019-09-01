@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
-  openBlinds,
-  closeBlindsUpwards,
-  closeBlindsDownwards,
-  moveBlindsUp,
-  moveBlindsDown
+  operateBlinds,
 } from "../actions/blindsControlPanelActions";
 import BlindsControlPanel from "../components/BlindsControlPanel/BlindsControlPanel";
 import BlindsControlPanelMobileView from "../components/BlindsControlPanel/BlindsControlPanelMobileView";
@@ -28,11 +24,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      onOpenBlinds: openBlinds,
-      onCloseBlindsUpwards: closeBlindsUpwards,
-      onCloseBlindsDownwards: closeBlindsDownwards,
-      onMoveBlindsUp: moveBlindsUp,
-      onMoveBlindsDown: moveBlindsDown
+      operateBlinds: operateBlinds,
     },
     dispatch
   );

@@ -4,7 +4,7 @@ import React from "react";
 
 export default class BlindsControlPanel extends React.Component {
   static propTypes = {
-    onOpenBlinds: PropTypes.func.isRequired
+    operateBlinds: PropTypes.func.isRequired
   };
 
   state = { selectedWindow: "all" };
@@ -13,13 +13,9 @@ export default class BlindsControlPanel extends React.Component {
     this.setState({ selectedWindow: index });
   }
 
-  getWindowsData() {
+  getWindowIndex() {
     const index = this.state.selectedWindow;
-    if (index === "all") {
-      return this.props.windows;
-    }
-
-    return { [index]: this.props.windows[index] };
+    return (index === "all") ? '' : (Number(index) + 1);
   }
 
   renderWindowControl(index) {
@@ -41,11 +37,7 @@ export default class BlindsControlPanel extends React.Component {
 
   render() {
     const {
-      onOpenBlinds,
-      onCloseBlindsUpwards,
-      onCloseBlindsDownwards,
-      onMoveBlindsUp,
-      onMoveBlindsDown,
+      operateBlinds,
       windows = {}
     } = this.props;
 
@@ -60,19 +52,19 @@ export default class BlindsControlPanel extends React.Component {
         </div>
         <div>
           <h3>2. Choose an action</h3>
-          <button onClick={() => onOpenBlinds(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('open', this.getWindowIndex())}>
             Open Blinds
           </button>
-          <button onClick={() => onCloseBlindsUpwards(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('close_upwards', this.getWindowIndex())}>
             Close Blinds Up
           </button>
-          <button onClick={() => onCloseBlindsDownwards(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('close_downwards', this.getWindowIndex())}>
             Close Blinds Down
           </button>
-          <button onClick={() => onMoveBlindsUp(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('move_up', this.getWindowIndex())}>
             Move Up
           </button>
-          <button onClick={() => onMoveBlindsDown(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('move_down', this.getWindowIndex())}>
             Move Down
           </button>
         </div>

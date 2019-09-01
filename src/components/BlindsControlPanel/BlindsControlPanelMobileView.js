@@ -4,32 +4,24 @@ import React from "react";
 
 export default class BlindsControlPanelMobileView extends React.Component {
   static propTypes = {
-    onOpenBlinds: PropTypes.func.isRequired,
-    onCloseBlindsDownwards: PropTypes.func.isRequired,
-    onCloseBlindsUpwards: PropTypes.func.isRequired
+    operateBlinds: PropTypes.func.isRequired,
   };
-
-  getWindowsData() {
-    return this.props.windows;
-  }
 
   render() {
     const {
-      onOpenBlinds,
-      onCloseBlindsUpwards,
-      onCloseBlindsDownwards
+      operateBlinds,
     } = this.props;
 
     return (
       <div>
         <div>
-          <button onClick={() => onOpenBlinds(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('open')}>
             Open All Blinds
           </button>
-          <button onClick={() => onCloseBlindsUpwards(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('close_upwards')}>
             Close All Blinds Up
           </button>
-          <button onClick={() => onCloseBlindsDownwards(this.getWindowsData())}>
+          <button onClick={() => operateBlinds('close_downwards')}>
             Close All Blinds Down
           </button>
         </div>
