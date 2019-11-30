@@ -1,4 +1,45 @@
 .wrapper {
-  background-color: #8acdea;
-  padding: 10px;
+  height: 100vh;
+  background-color: #000;
+  color: orange;
+  padding: 5px;
+  font-family: Helvetica;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+
+  .time {
+    text-align: right;
+    margin-bottom: 10px;
+    flex: 1;
+  }
+
+  > div {
+    flex: 1;
+  }
+
+  .flex {
+    display: flex;
+
+    .direction {
+      margin-bottom: 5px;
+      flex-grow: 1;
+    }
+
+    .nextDeparture {
+      text-align: right;
+      min-width: 80px;
+    }
+  }
+}
+
+.elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
