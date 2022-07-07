@@ -35,7 +35,7 @@
     "connected-react-router": "4.4.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "object-assign": "4.1.1",
     "react": "16.4.2",
     "react-dom": "16.4.2",
